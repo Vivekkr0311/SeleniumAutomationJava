@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="RegressionSuite" verbose="1">
+    <test name="RegressionTests">
+        <classes>
+            <class name="com.Vivek.tests.BasicTest_01" />
+        </classes>
+    </test>
+
+<!--    We will add listner later-->
+<!--    <listeners>-->
+<!--        <listener class-name="com.yourcompany.listeners.TestListener" />-->
+<!--    </listeners>-->
+</suite>
