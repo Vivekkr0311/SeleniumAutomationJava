@@ -3,6 +3,7 @@
     <test name="RegressionTests">
         <classes>
             <class name="com.Vivek.tests.BasicTest_01" />
+            <class name="com.Vivek.tests.HomePage_With_Three_Sliders_02" />
         </classes>
     </test>
 
