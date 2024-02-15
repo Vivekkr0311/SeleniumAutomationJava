@@ -30,6 +30,7 @@ public class WebDriverFactory {
 
     public static void quitWebDriver(WebDriver driver) {
         if (driver != null) {
+            driver.close();
             driver.quit();
         }
     }

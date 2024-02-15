@@ -1,17 +1,15 @@
 package com.Vivek.Pages;
 
+import com.Vivek.Utils.TestConfig;
 import org.openqa.selenium.WebDriver;
-
-import static com.Vivek.Utils.WebDriverFactory.createWebDriver;
 
 public class HomePage {
 
-    private static final String targetURL = "https://practice.automationtesting.in";
+    static TestConfig config = new TestConfig();
+    private static final String targetURL = config.getAccess().getProperty("WEB_URL");
 
-    public static WebDriver launchWebSite(String browser){
-        WebDriver driver = createWebDriver(browser);
+    public static WebDriver launchWebSite(WebDriver driver){
         driver.get(targetURL);
-
         return driver;
     }
 }
