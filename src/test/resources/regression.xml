@@ -1,11 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="RegressionSuite" verbose="1">
     <test name="RegressionTests">
-        <classes>
-            <class name="com.Vivek.tests.BasicTest_01" />
-            <class name="com.Vivek.tests.HomePage_With_Three_Sliders_02" />
-            <class name="com.Vivek.tests.HomePage_With_Three_Arrivals_03" />
-        </classes>
+        <packages>
+            <package name="com.Vivek.tests" />
+        </packages>
     </test>
 
 <!--    We will add listner later-->

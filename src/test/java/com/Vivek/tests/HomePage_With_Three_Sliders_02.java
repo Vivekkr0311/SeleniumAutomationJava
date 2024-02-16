@@ -28,7 +28,8 @@ public class HomePage_With_Three_Sliders_02 {
     @BeforeClass
     public void setUpMethod(){
         logger.log(Level.INFO, "Crating web driver " + WEB_BROWSER);
-        driver = WebDriverFactory.createWebDriver(WEB_BROWSER);
+        driver = WebDriverFactory.createWebDriver("", "internal");
+//        driver = WebDriverFactory.createWebDriver(WEB_BROWSER);
     }
 
     @AfterClass
