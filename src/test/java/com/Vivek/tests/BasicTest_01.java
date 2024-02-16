@@ -9,12 +9,11 @@ import org.testng.annotations.*;
 public class BasicTest_01 {
     static WebDriver driver = null;
     static TestConfig config = new TestConfig();
-    private static final String SAFARI = config.getAccess().getProperty("SAFARI");
-    private static final String CHROME = config.getAccess().getProperty("CHROME");
+    private static final String WEB_BROWSER = config.getAccess().getProperty("web_browser");
 
     @BeforeClass
     public static void setUpMethod(){
-        driver = WebDriverFactory.createWebDriver(CHROME);
+        driver = WebDriverFactory.createWebDriver(WEB_BROWSER);
     }
 
     @AfterClass

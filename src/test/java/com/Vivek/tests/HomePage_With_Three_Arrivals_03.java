@@ -15,9 +15,7 @@ public class HomePage_With_Three_Arrivals_03 {
 
     static WebDriver driver = null;
     static TestConfig config = new TestConfig();
-    private static final String SAFARI = config.getAccess().getProperty("SAFARI");
-    private static final String CHROME = config.getAccess().getProperty("CHROME");
-    private static final String WEB_BROWSER = CHROME;
+    private static final String WEB_BROWSER = config.getAccess().getProperty("web_browser");
     private static final Logger logger = Logger.getLogger(Class.class.getName());
 
     @BeforeClass
