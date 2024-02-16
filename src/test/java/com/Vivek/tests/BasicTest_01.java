@@ -1,7 +1,7 @@
 package com.Vivek.tests;
 
 import com.Vivek.Pages.HomePage;
-import com.Vivek.Utils.TestConfig;
+import com.Vivek.config.TestConfig;
 import com.Vivek.Utils.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
