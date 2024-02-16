@@ -34,11 +34,22 @@ public class HomePage_With_Three_Sliders_02 {
     @Test
     public static void test() throws InterruptedException {
         clickOnShop();
+        clickOnHomeButton();
+        validationThreeSliders();
+    }
+
+    private static void clickOnShop() throws InterruptedException{
+        HomePage.launchWebSite(driver);
+        HomePage.clickOnShopButton(driver);
         Thread.sleep(1000);
     }
 
-    private static void clickOnShop(){
-        HomePage.launchWebSite(driver);
-        HomePage.clickOnShopButton(driver);
+    private static void clickOnHomeButton() throws InterruptedException{
+        HomePage.clickOnHomePage(driver);
+        Thread.sleep(1000);
+    }
+
+    private static void validationThreeSliders() {
+        HomePage.countSliders(driver);
     }
 }
