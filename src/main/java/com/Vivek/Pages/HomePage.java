@@ -15,6 +15,7 @@ public class HomePage {
     private static final String HOME_PAGE_HOME_BUTTON_XPATH = "//a[contains(text(), 'Home')]";
     private static final String NEW_ARRIVALS_XPATH = "(((//h2[contains(text(), 'new arrivals')]/ancestor::div)[11])/div[@class='tb-column-inner']/div)[2]/div";
     private static final String THREE_SLIDERS_XPATH = "//div[@class='themify_builder_sub_row clearfix gutter-default   sub_row_1-0-2']/div";
+    private static final String FIRST_PRODUCT_NEW_ARRIVAL_IMAGE_XPATH = "(//a[@class='woocommerce-LoopProduct-link'])[1]/img";
 
     public static WebDriver launchWebSite(WebDriver driver){
         driver.get(targetURL);
@@ -42,6 +43,12 @@ public class HomePage {
     public static WebDriver countNewArrivals(WebDriver driver){
         List<WebElement> sliders = driver.findElements(By.xpath(NEW_ARRIVALS_XPATH));
         Assert.assertEquals(3, sliders.size());
+        return driver;
+    }
+
+    public static WebDriver addProductIntoTheBasket(WebDriver driver){
+        WebElement firstProductNewArrival = driver.findElement(By.xpath(FIRST_PRODUCT_NEW_ARRIVAL_IMAGE_XPATH));
+        firstProductNewArrival.click();
         return driver;
     }
 }
