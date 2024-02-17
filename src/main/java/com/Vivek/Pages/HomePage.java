@@ -1,5 +1,6 @@
 package com.Vivek.Pages;
 
+import com.Vivek.Utils.RunTimeStorage;
 import com.Vivek.config.TestConfig;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,6 +17,7 @@ public class HomePage {
     private static final String NEW_ARRIVALS_XPATH = "(((//h2[contains(text(), 'new arrivals')]/ancestor::div)[11])/div[@class='tb-column-inner']/div)[2]/div";
     private static final String THREE_SLIDERS_XPATH = "//div[@class='themify_builder_sub_row clearfix gutter-default   sub_row_1-0-2']/div";
     private static final String FIRST_PRODUCT_NEW_ARRIVAL_IMAGE_XPATH = "(//a[@class='woocommerce-LoopProduct-link'])[1]/img";
+    private static final String FIRST_PRODUCT_NEW_ARRIVALE_TITLE = "//h1[@class='product_title entry-title']";
 
     public static WebDriver launchWebSite(WebDriver driver){
         driver.get(targetURL);
@@ -49,6 +51,9 @@ public class HomePage {
     public static WebDriver addProductIntoTheBasket(WebDriver driver){
         WebElement firstProductNewArrival = driver.findElement(By.xpath(FIRST_PRODUCT_NEW_ARRIVAL_IMAGE_XPATH));
         firstProductNewArrival.click();
+
+        String productName = driver.findElement(By.xpath(FIRST_PRODUCT_NEW_ARRIVALE_TITLE)).getText();
+        RunTimeStorage.storeValue("productTitle", productName);
         return driver;
     }
 }

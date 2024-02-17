@@ -2,6 +2,7 @@ package com.Vivek.tests;
 
 import com.Vivek.Pages.BasketPage;
 import com.Vivek.Pages.HomePage;
+import com.Vivek.Utils.RunTimeStorage;
 import com.Vivek.Utils.WebDriverFactory;
 import com.Vivek.config.TestConfig;
 import org.openqa.selenium.WebDriver;
@@ -29,6 +30,7 @@ public class HomePage_Add_Product_Into_Basket_04 {
     public void cleanUpMethod(){
         logger.log(Level.INFO, "Cleaning up web driver " + WEB_BROWSER);
         WebDriverFactory.quitWebDriver(driver);
+        RunTimeStorage.clearStorage();
     }
 
     @Test
@@ -38,6 +40,7 @@ public class HomePage_Add_Product_Into_Basket_04 {
         validateNewArrivals();
         addProductInBasket();
         clickOnBasketPage();
+        validatingProduct();
     }
 
     private static void clickOnShop(){
@@ -89,6 +92,16 @@ public class HomePage_Add_Product_Into_Basket_04 {
             Thread.sleep(1000);
         } catch (Exception e){
             logger.log(Level.WARNING, "Click on add to basket failed\n" + e.getStackTrace());
+        }
+    }
+
+    private static void validatingProduct(){
+        logger.log(Level.INFO, "Validating product name");
+        try{
+            BasketPage.validatingProductName(driver);
+            Thread.sleep(1000);
+        }catch (Exception e){
+            logger.log(Level.WARNING, "Validating product name failed " + e.getStackTrace());
         }
     }
 }
