@@ -18,18 +18,17 @@ public class HomePage_Add_Product_Into_Basket_04 {
 
     static WebDriver driver = null;
     static TestConfig config = new TestConfig();
-    private static final String WEB_BROWSER = config.getAccess().getProperty("web_browser");
     private static final Logger logger = Logger.getLogger(Class.class.getName());
 
     @BeforeClass
     public void setUpMethod(){
-        logger.log(Level.INFO, "Crating web driver " + WEB_BROWSER);
-        driver = WebDriverFactory.createWebDriver(WEB_BROWSER);
+        logger.log(Level.INFO, "Crating web driver ");
+        driver = WebDriverFactory.createWebDriver();
     }
 
     @AfterClass
     public void cleanUpMethod(){
-        logger.log(Level.INFO, "Cleaning up web driver " + WEB_BROWSER);
+        logger.log(Level.INFO, "Cleaning up web driver ");
         WebDriverFactory.quitWebDriver(driver);
         RunTimeStorage.clearStorage();
     }

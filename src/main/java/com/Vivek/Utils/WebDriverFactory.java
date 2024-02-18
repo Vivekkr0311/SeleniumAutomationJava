@@ -21,12 +21,13 @@ public class WebDriverFactory {
     private static final String REMOTE_URL = config.getAccess().getProperty("remote_driver_url");
     private static final String WEB_DRIVER_SOURCE = config.getAccess().getProperty("webdriver_source");
     private static final String MODE = config.getAccess().getProperty("mode");
+    private static final String BROWSER = config.getAccess().getProperty("web_browser");
     private static final Logger logger = Logger.getLogger(Class.class.getName());
 
-    public static WebDriver createWebDriver(String browser) {
+    private static WebDriver createLocalWebDriver() {
         WebDriver driver = null;
 
-        switch (browser.toLowerCase()) {
+        switch (BROWSER.toLowerCase()) {
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments(MODE);
@@ -45,16 +46,16 @@ public class WebDriverFactory {
                 break;
 
             default:
-                throw new IllegalArgumentException("Unsupported browser: " + browser);
+                throw new IllegalArgumentException("Unsupported browser: " + BROWSER);
         }
 
         return driver;
     }
 
-    public static WebDriver createRemoteDriver(String browser) throws MalformedURLException {
+    private static WebDriver createRemoteDriver() throws MalformedURLException {
         URL url = new URL(REMOTE_URL);
         RemoteWebDriver driver;
-        switch (browser.toLowerCase()) {
+        switch (BROWSER.toLowerCase()) {
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments(MODE);
@@ -74,19 +75,19 @@ public class WebDriverFactory {
                 break;
 
             default:
-                throw new IllegalArgumentException("Unsupported browser: " + browser);
+                throw new IllegalArgumentException("Unsupported browser: " + BROWSER);
         }
 
         return driver;
     }
 
-    public static WebDriver createWebDriver(String browser, String source){
+    public static WebDriver createWebDriver(){
         WebDriver driver = null;
         try{
             if(WEB_DRIVER_SOURCE.contains("remote")){
-                driver = createRemoteDriver(browser);
+                driver = createRemoteDriver();
             } else {
-                driver = createWebDriver(browser);
+                driver = createLocalWebDriver();
             }
         } catch (Exception e){
             logger.log(Level.INFO, "Web driver not created " + e.getStackTrace());
