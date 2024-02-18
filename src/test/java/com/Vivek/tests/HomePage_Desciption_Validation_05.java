@@ -90,28 +90,6 @@ public class HomePage_Desciption_Validation_05 {
         }
     }
 
-    private static void clickOnBasketPage(){
-        logger.log(Level.INFO, "Click on add to basket button");
-        try{
-            BasketPage.addProductToBasketMethod(driver);
-            Thread.sleep(1000);
-        } catch (Exception e){
-            logger.log(Level.WARNING, "Click on add to basket failed\n" + e.getStackTrace());
-            Throw.valueOf(e.getMessage());
-        }
-    }
-
-    private static void validatingProduct(){
-        logger.log(Level.INFO, "Validating product name");
-        try{
-            BasketPage.validatingProductName(driver);
-            Thread.sleep(1000);
-        }catch (Exception e){
-            logger.log(Level.WARNING, "Validating product name failed " + e.getStackTrace());
-            Throw.valueOf(e.getMessage());
-        }
-    }
-
     private static void storeProductDescription(){
         logger.log(Level.INFO, "Storing product description");
         try{
