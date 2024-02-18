@@ -14,6 +14,7 @@ public class BasketPage {
     private static final String ADD_PRODUCT_TO_BASKET_BUTTON = "//button[contains(text(), 'Add to basket')]";
     private static final String VIEW_BASKET_BUTTON = "//a[contains(text(), 'View Basket')]";
     private static final String PRODUCT_TITLE = "//td[@class='product-name']/a";
+    private static final String PRODUCT_DESCRIPTION_XAPTH = "//div[@id='tab-description']/p";
 
     public static WebDriver addProductToBasketMethod(WebDriver driver){
         WebElement addToBasket = driver.findElement(By.xpath(ADD_PRODUCT_TO_BASKET_BUTTON));
@@ -29,6 +30,13 @@ public class BasketPage {
         String productTitleInBasketPage = driver.findElement(By.xpath(PRODUCT_TITLE)).getText();
 
         Assert.assertEquals(productName, productTitleInBasketPage);
+        return driver;
+    }
+
+    public static WebDriver storeProductDescription(WebDriver driver){
+        WebElement productDescription = driver.findElement(By.xpath(PRODUCT_DESCRIPTION_XAPTH));
+        String productDescriptionText = productDescription.getText();
+        RunTimeStorage.storeValue("productDescription", productDescriptionText);
         return driver;
     }
 }
