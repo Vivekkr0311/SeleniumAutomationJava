@@ -3,6 +3,7 @@ package com.Vivek.tests;
 import com.Vivek.Pages.HomePage;
 import com.Vivek.config.TestConfig;
 import com.Vivek.Utils.WebDriverFactory;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -42,6 +43,7 @@ public class HomePage_With_Three_Sliders_02 {
         validationThreeSliders();
     }
 
+    @Step
     private static void clickOnShop(){
         logger.log(Level.INFO, "Click on shop method execution");
         try {
@@ -53,6 +55,7 @@ public class HomePage_With_Three_Sliders_02 {
         }
     }
 
+    @Step
     private static void clickOnHomeButton(){
         logger.log(Level.INFO, "Click on shop method execution");
         try{
@@ -64,6 +67,7 @@ public class HomePage_With_Three_Sliders_02 {
 
     }
 
+    @Step
     private static void validationThreeSliders() {
         logger.log(Level.INFO, "Three slider validation method execution");
         try{

@@ -5,6 +5,7 @@ import com.Vivek.Pages.HomePage;
 import com.Vivek.Utils.RunTimeStorage;
 import com.Vivek.Utils.WebDriverFactory;
 import com.Vivek.config.TestConfig;
+import io.qameta.allure.Step;
 import net.bytebuddy.implementation.bytecode.Throw;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -45,6 +46,7 @@ public class ProductPage_Review_Heaing_Validation_06 {
         validateHeadingIsPresent();
     }
 
+    @Step
     private static void clickOnShop(){
         logger.log(Level.INFO, "Click on shop method execution");
         try {
@@ -57,6 +59,7 @@ public class ProductPage_Review_Heaing_Validation_06 {
         }
     }
 
+    @Step
     private static void clickOnHomeButton(){
         logger.log(Level.INFO, "Click on shop method execution");
         try{
@@ -69,6 +72,7 @@ public class ProductPage_Review_Heaing_Validation_06 {
 
     }
 
+    @Step
     private static void validateNewArrivals(){
         logger.log(Level.INFO, "Validating new arrivals");
         try {
@@ -80,6 +84,7 @@ public class ProductPage_Review_Heaing_Validation_06 {
         }
     }
 
+    @Step
     private static void addProductInBasket(){
         logger.log(Level.INFO, "Adding product into the basket");
         try{
@@ -91,6 +96,7 @@ public class ProductPage_Review_Heaing_Validation_06 {
         }
     }
 
+    @Step
     private static void clickOnBasketPage(){
         logger.log(Level.INFO, "Click on add to basket button");
         try{
@@ -102,6 +108,7 @@ public class ProductPage_Review_Heaing_Validation_06 {
         }
     }
 
+    @Step
     private static void validatingProduct(){
         logger.log(Level.INFO, "Validating product name");
         try{
@@ -113,6 +120,7 @@ public class ProductPage_Review_Heaing_Validation_06 {
         }
     }
 
+    @Step
     private static void storeProductDescription(){
         logger.log(Level.INFO, "Storing product description");
         try{
@@ -124,6 +132,7 @@ public class ProductPage_Review_Heaing_Validation_06 {
         }
     }
 
+    @Step
     private static void validateProductDescription(){
         logger.log(Level.INFO, "Validating product description");
         try{
@@ -136,6 +145,7 @@ public class ProductPage_Review_Heaing_Validation_06 {
         }
     }
 
+    @Step
     private static void validateHeadingIsPresent(){
         logger.log(Level.INFO, "Validating review heading is present");
         try{

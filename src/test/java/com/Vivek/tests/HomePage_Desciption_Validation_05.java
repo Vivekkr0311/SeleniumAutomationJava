@@ -5,6 +5,7 @@ import com.Vivek.Pages.HomePage;
 import com.Vivek.Utils.RunTimeStorage;
 import com.Vivek.Utils.WebDriverFactory;
 import com.Vivek.config.TestConfig;
+import io.qameta.allure.Step;
 import net.bytebuddy.implementation.bytecode.Throw;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -44,6 +45,7 @@ public class HomePage_Desciption_Validation_05 {
         validateProductDescription();
     }
 
+    @Step
     private static void clickOnShop(){
         logger.log(Level.INFO, "Click on shop method execution");
         try {
@@ -56,6 +58,7 @@ public class HomePage_Desciption_Validation_05 {
         }
     }
 
+    @Step
     private static void clickOnHomeButton(){
         logger.log(Level.INFO, "Click on shop method execution");
         try{
@@ -68,6 +71,7 @@ public class HomePage_Desciption_Validation_05 {
 
     }
 
+    @Step
     private static void validateNewArrivals(){
         logger.log(Level.INFO, "Validating new arrivals");
         try {
@@ -79,6 +83,7 @@ public class HomePage_Desciption_Validation_05 {
         }
     }
 
+    @Step
     private static void addProductInBasket(){
         logger.log(Level.INFO, "Adding product into the basket");
         try{
@@ -90,6 +95,7 @@ public class HomePage_Desciption_Validation_05 {
         }
     }
 
+    @Step
     private static void storeProductDescription(){
         logger.log(Level.INFO, "Storing product description");
         try{
@@ -101,6 +107,7 @@ public class HomePage_Desciption_Validation_05 {
         }
     }
 
+    @Step
     private static void validateProductDescription(){
         logger.log(Level.INFO, "Validating product description");
         try{

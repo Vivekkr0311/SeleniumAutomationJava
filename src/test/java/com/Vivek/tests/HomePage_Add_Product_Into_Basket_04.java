@@ -5,6 +5,7 @@ import com.Vivek.Pages.HomePage;
 import com.Vivek.Utils.RunTimeStorage;
 import com.Vivek.Utils.WebDriverFactory;
 import com.Vivek.config.TestConfig;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -43,6 +44,7 @@ public class HomePage_Add_Product_Into_Basket_04 {
         validatingProduct();
     }
 
+    @Step
     private static void clickOnShop(){
         logger.log(Level.INFO, "Click on shop method execution");
         try {
@@ -54,6 +56,7 @@ public class HomePage_Add_Product_Into_Basket_04 {
         }
     }
 
+    @Step
     private static void clickOnHomeButton(){
         logger.log(Level.INFO, "Click on shop method execution");
         try{
@@ -65,6 +68,7 @@ public class HomePage_Add_Product_Into_Basket_04 {
 
     }
 
+    @Step
     private static void validateNewArrivals(){
         logger.log(Level.INFO, "Validating new arrivals");
         try {
@@ -75,6 +79,7 @@ public class HomePage_Add_Product_Into_Basket_04 {
         }
     }
 
+    @Step
     private static void addProductInBasket(){
         logger.log(Level.INFO, "Adding product into the basket");
         try{
@@ -85,6 +90,7 @@ public class HomePage_Add_Product_Into_Basket_04 {
         }
     }
 
+    @Step
     private static void clickOnBasketPage(){
         logger.log(Level.INFO, "Click on add to basket button");
         try{
@@ -95,6 +101,7 @@ public class HomePage_Add_Product_Into_Basket_04 {
         }
     }
 
+    @Step
     private static void validatingProduct(){
         logger.log(Level.INFO, "Validating product name");
         try{
