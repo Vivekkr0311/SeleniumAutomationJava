@@ -127,6 +127,7 @@ public class ProductPage_Review_Heaing_Validation_06 {
     private static void validateProductDescription(){
         logger.log(Level.INFO, "Validating product description");
         try{
+            BasketPage.clickOnReviewTab(driver);
             String productDescription = RunTimeStorage.getValue("productDescription");
             Assert.assertTrue(!productDescription.isEmpty());
         }catch (Exception e){
