@@ -51,16 +51,11 @@
           <version>2.8</version>
         <configuration>
           <reportVersion>2.8</reportVersion>
+          <allureDownloadUrl>https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.8.0/allure-commandline-2.8.0.zip</allureDownloadUrl>
+          <outputDirectory>allure-results</outputDirectory>
         </configuration>
       </plugin>
     </plugins>
   </build>
-
-  <pluginRepositories>
-    <pluginRepository>
-      <id>central</id>
-      <url>https://repo.maven.apache.org/maven2</url>
-    </pluginRepository>
-  </pluginRepositories>
 
 </project>
