@@ -1,32 +1,33 @@
 package com.Vivek.Utils;
 
+import java.io.File;
 import java.io.IOException;
 
 public class AllureReportGenerator {
 
     public static void main(String[] args) {
-        // Provide the path to the directory containing Allure result data
         String resultsDirectory = "/allure-results";
 
-        // Get the project's base directory
         String projectDirectory = System.getProperty("user.dir");
 
-        // Generate Allure report
         generateAllureReport(projectDirectory, resultsDirectory);
     }
 
     private static void generateAllureReport(String projectDirectory, String resultsDirectory) {
         try {
-            // Build the command to execute "allure serve" with the specified results directory
-            String command = "allure serve " + resultsDirectory;
+            String command = "allure";
+            String serveCommand = "serve";
+            String resultsPath = new File(projectDirectory, resultsDirectory).getPath();
 
-            // Execute the command in the terminal, setting the working directory
-            Process process = Runtime.getRuntime().exec(command, null, new java.io.File(projectDirectory));
+            ProcessBuilder processBuilder = new ProcessBuilder(command, serveCommand, resultsPath);
 
-            // Wait for the process to complete
+            processBuilder.directory(new File(projectDirectory, "allure-results"));
+
+            Process process = processBuilder.start();
+
+
             int exitCode = process.waitFor();
 
-            // Check if the command was executed successfully
             if (exitCode == 0) {
                 System.out.println("Allure report generated successfully.");
             } else {
