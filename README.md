@@ -15,7 +15,7 @@
    Execute the following command:  
    ```  $ allure serve /allure-reports ```  
    This command starts a server on your local IP, serving the Allure report.
-   or just go to src/main/java/com/Vivek/Utils/AllureReportGenerator.java
+   or just go to  ```src/main/java/com/Vivek/Utils/AllureReportGenerator.java ```
    and execute it.
    Make sure you have allure cli installed in your system.  
 
