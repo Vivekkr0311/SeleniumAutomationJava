@@ -1,4 +1,4 @@
-package com.Vivek.tests;
+package com.Vivek.tests.UITests;
 
 import com.Vivek.Pages.BasketPage;
 import com.Vivek.Pages.HomePage;

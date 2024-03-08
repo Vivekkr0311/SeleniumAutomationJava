@@ -1,4 +1,4 @@
-package com.Vivek.tests;
+package com.Vivek.tests.UITests;
 
 import com.Vivek.Pages.BasketPage;
 import com.Vivek.Pages.HomePage;
@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class HomePage_Desciption_Validation_05 {
+public class ProductPage_Review_Heaing_Validation_06 {
     static WebDriver driver = null;
     static TestConfig config = new TestConfig();
     private static final Logger logger = Logger.getLogger(Class.class.getName());
@@ -42,6 +42,7 @@ public class HomePage_Desciption_Validation_05 {
         addProductInBasket();
         storeProductDescription();
         validateProductDescription();
+        validateHeadingIsPresent();
     }
 
     @Step
@@ -95,6 +96,30 @@ public class HomePage_Desciption_Validation_05 {
     }
 
     @Step
+    private static void clickOnBasketPage(){
+        logger.log(Level.INFO, "Click on add to basket button");
+        try{
+            BasketPage.addProductToBasketMethod(driver);
+            Thread.sleep(1000);
+        } catch (Exception e){
+            logger.log(Level.WARNING, "Click on add to basket failed\n" + e.getStackTrace());
+            Throw.valueOf(e.getMessage());
+        }
+    }
+
+    @Step
+    private static void validatingProduct(){
+        logger.log(Level.INFO, "Validating product name");
+        try{
+            BasketPage.validatingProductName(driver);
+            Thread.sleep(1000);
+        }catch (Exception e){
+            logger.log(Level.WARNING, "Validating product name failed " + e.getStackTrace());
+            Throw.valueOf(e.getMessage());
+        }
+    }
+
+    @Step
     private static void storeProductDescription(){
         logger.log(Level.INFO, "Storing product description");
         try{
@@ -110,10 +135,23 @@ public class HomePage_Desciption_Validation_05 {
     private static void validateProductDescription(){
         logger.log(Level.INFO, "Validating product description");
         try{
+            BasketPage.clickOnReviewTab(driver);
             String productDescription = RunTimeStorage.getValue("productDescription");
             Assert.assertTrue(!productDescription.isEmpty());
         }catch (Exception e){
             logger.log(Level.WARNING, "Validating product description failed");
+            Throw.valueOf(e.getMessage());
+        }
+    }
+
+    @Step
+    private static void validateHeadingIsPresent(){
+        logger.log(Level.INFO, "Validating review heading is present");
+        try{
+            boolean isHeadingPresent = Boolean.valueOf(RunTimeStorage.getValue("isHeadingDisplayed"));
+            Assert.assertTrue(isHeadingPresent);
+        } catch (Exception e){
+            logger.log(Level.WARNING, "Validating product heading failed");
             Throw.valueOf(e.getMessage());
         }
     }

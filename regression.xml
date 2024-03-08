@@ -2,7 +2,7 @@
 <suite name="RegressionSuite" verbose="1">
     <test name="RegressionTests">
         <packages>
-            <package name="com.Vivek.tests" />
+            <package name="com.Vivek.tests.UITests" />
         </packages>
     </test>
 

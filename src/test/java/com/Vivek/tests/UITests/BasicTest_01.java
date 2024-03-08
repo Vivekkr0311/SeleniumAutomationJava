@@ -1,4 +1,4 @@
-package com.Vivek.tests;
+package com.Vivek.tests.UITests;
 
 import com.Vivek.Pages.HomePage;
 import com.Vivek.config.TestConfig;
