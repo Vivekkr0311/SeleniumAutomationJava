@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                // Clone the repository
+                git 'https://github.com/Vivekkr0311/SeleniumAutomationJava.git'
+                echo 'Repository cloned successfully'
+            }
+        }
+
+        stage('Execute Regression Tests') {
+            steps {
+                // Change into the cloned repository directory
+                dir('SeleniumAutomationJava') {
+                    // Run Maven command using the configured Maven installation
+                    sh 'mvn clean install'
+                    sh 'mvn test -DsuiteXmlFile=regression.xml'
+                    echo 'Regression tests executed successfully'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            // Publish Allure reports
+            allure([
+                includeProperties: true,
+                jdk: '',
+                properties: [],
+                reportBuildPolicy: 'ALWAYS',
+                results: [[path: '/allure-report']]
+            ])
+
+            // Clean the workspace after the pipeline
+            deleteDir()
+        }
+    }
+}
