@@ -31,8 +31,7 @@ public class BasketPage {
         String productName = RunTimeStorage.getValue("productTitle");
         String productTitleInBasketPage = driver.findElement(By.xpath(PRODUCT_TITLE)).getText();
 
-//        Assert.assertEquals(productName, productTitleInBasketPage);
-        Assert.assertTrue(false);
+        Assert.assertEquals(productName, productTitleInBasketPage);
         return driver;
     }
 
