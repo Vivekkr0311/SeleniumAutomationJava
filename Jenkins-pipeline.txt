@@ -1,24 +1,28 @@
 pipeline {
     agent any
 
+    tools{
+        allure 'allure'
+    }
+
     stages {
         stage('Clone Repository') {
             steps {
-                // Clone the repository
-                git 'https://github.com/Vivekkr0311/SeleniumAutomationJava.git'
-                echo 'Repository cloned successfully'
+                // Checkout the desired Git branch
+                script {
+                    git branch: 'jenkins-config', url: 'https://github.com/Vivekkr0311/SeleniumAutomationJava.git'
+                    echo 'Checked out "jenkins-config" branch successfully'
+                }
             }
         }
+    }
 
         stage('Execute Regression Tests') {
             steps {
                 // Change into the cloned repository directory
-                dir('SeleniumAutomationJava') {
-                    // Run Maven command using the configured Maven installation
-                    sh 'mvn clean install'
-                    sh 'mvn test -DsuiteXmlFile=regression.xml'
-                    echo 'Regression tests executed successfully'
-                }
+                sh 'mvn clean install'
+                sh 'mvn test -DsuiteXmlFile=regression.xml'
+                echo 'Regression tests executed successfully'
             }
         }
     }
@@ -31,9 +35,10 @@ pipeline {
                 jdk: '',
                 properties: [],
                 reportBuildPolicy: 'ALWAYS',
-                results: [[path: '/allure-report']]
+                results: [[path: '/allure-results']]
             ])
 
+            sh 'rm -rf allure-results'
             // Clean the workspace after the pipeline
             deleteDir()
         }
