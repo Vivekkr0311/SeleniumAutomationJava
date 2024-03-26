@@ -1,13 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="RegressionSuite" verbose="1">
+<suite name="com.Vivek.tests.UITests" verbose="1" thread-count="1">
     <test name="RegressionTests">
         <packages>
             <package name="com.Vivek.tests.UITests" />
         </packages>
     </test>
-
-<!--    We will add listner later-->
 <!--    <listeners>-->
-<!--        <listener class-name="com.yourcompany.listeners.TestListener" />-->
+<!--        <listener class-name="com.Vivek.tests.UITests.BasicTest_01" />-->
+<!--        <listener class-name="com.Vivek.tests.UITests.HomePage_With_Three_Sliders_02" />-->
 <!--    </listeners>-->
 </suite>
