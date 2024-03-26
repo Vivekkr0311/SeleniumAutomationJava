@@ -38,7 +38,8 @@ public class HomePage {
 
     public static WebDriver countSliders(WebDriver driver){
         List<WebElement> sliders = driver.findElements(By.xpath(THREE_SLIDERS_XPATH));
-        Assert.assertEquals(3, sliders.size());
+//        Assert.assertEquals(3, sliders.size());
+        Assert.assertTrue(false);
         return driver;
     }
 
