@@ -85,3 +85,6 @@ This repository contains an automation testing framework built from scratch for 
 ### Access the Allure Report:🌐📊  
 1. Open a web browser and go to the provided local IP address.  
 2. You should see the generated Allure report with detailed information about your test runs  
+
+### Jenkins image on docker hub link
+``` https://hub.docker.com/layers/vivekkr0311/myjenkins_server_repo/latest/images/sha256-28b9409e2323f4cadc5da6c047a4edd46055bfc06277a0ff29c688049d3765ae?context=repo ```
