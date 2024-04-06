@@ -88,3 +88,4 @@ This repository contains an automation testing framework built from scratch for 
 
 ### Jenkins image on docker hub link
 ``` https://hub.docker.com/layers/vivekkr0311/myjenkins_server_repo/latest/images/sha256-28b9409e2323f4cadc5da6c047a4edd46055bfc06277a0ff29c688049d3765ae?context=repo ```
+Use this command to get image in your machine ``` docker pull vivekkr0311/myjenkins_server_repo ``` 
